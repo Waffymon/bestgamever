@@ -1,50 +1,59 @@
-var canvas, backgroundImage;
+//grandes
 
-var gameState = 0;
-var playerCount =0;
 
-var database;
+var cuadritodeprueba
+var cuadrito2
+var cuadrito3
+var cuadrito4
 
-var form, player, game;
 
-var pista
-var rayomcqueen,elmasrapido
-var franchisco,virgollini
-var mate,troca
-var sheriff,elmaschido
-var lospits=[]
-var participantes
+//naranja a morado
+var cuadrod1
+var cuadrod2
+var cuadrod3
+var cuadrod4
+var cuadrod5
+var cuadrod6
+var cuadrod7
+
+//morado a amarillo
+ var cuadodro1
+
+
 
 function preload(){
-  elmasrapido=loadImage("../images/car3.png");
-  virgollini=loadImage("../images/car2.png");
-  troca=loadImage("../images/car4.png");
-  elmaschido=loadImage("../images/car1.png");
-  pista=loadImage("../images/track.png");
+  
 }
 
 function setup(){
-  canvas = createCanvas(displayWidth-70,displayHeight-80);
-  database = firebase.database();
-  game = new Game();
-  game.getState();
-  game.start();
+   createCanvas(1000,1000);
+   cuadritodeprueba=createSprite(75,75,150,150);
+   cuadrito2=createSprite(925,75,150,150);
+   cuadrito3=createSprite(925,925,150,150);
+   cuadrito4=createSprite(75,925,150,150);
+   
+   cuadritodeprueba.shapeColor="orange";
+   cuadrito2.shapeColor="blue";
+   cuadrito3.shapeColor="yellow";
+   cuadrito4.shapeColor="purple";
+
+
+cuadod1=createSprite(75,180,150,90);
+cuadrod2=createSprite(75,290,150,90);
+cuadrod3=createSprite(75,400,150,90);
+cuadrod4=createSprite(75,510,150,90);
+cuadrod5=createSprite(75,620,150,90);
+cuadrod6=createSprite(75,730,150,90);
+cuadrod7=createSprite(75,840,150,90);
+
+cuadodro1=createSprite(200,925,90,150)
+
+
 }
 
 
-function draw()
-{
-  if(playerCount===2){
-    game.updateState(1) 
-  } 
-  if(gameState===1){
-    clear();
-    game.play(); 
+function draw(){
+background("#BFDBAE");  
 
-  }
-  if(gameState===2){
-    game.end();
-  }
-  drawSprites();
+drawSprites();
 }
-                   
